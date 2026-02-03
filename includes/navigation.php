@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -27,6 +29,8 @@ session_start();
                 }
 
                 ?>
+                <li><a href='products.php'>Products</a></li>
+                <li><a href='cart.php' title="Shopping Cart"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                 <li><a href='admin'>Admin</a></li>
                 <li><a href='registration.php'>Registration</a></li>
                 <?php

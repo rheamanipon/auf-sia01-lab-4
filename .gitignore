@@ -1,0 +1,12 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Optional: uncomment to avoid committing Mailtrap credentials (use env or copy locally)
+# includes/mailtrap_config.php

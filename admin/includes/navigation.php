@@ -109,6 +109,31 @@
             </li>
 
             <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#products-dropdown">
+                    <i class="fa fa-fw fa-shopping-cart"></i> Products <i class="fa fa-fw fa-caret-down"></i>
+                </a>
+                <ul id="products-dropdown" class="collapse">
+                    <li>
+                        <a href="products.php?source=add_product">Add Product</a>
+                    </li>
+                    <li>
+                        <a href="products.php">List Products</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#orders-dropdown">
+                    <i class="fa fa-fw fa-list"></i> Orders <i class="fa fa-fw fa-caret-down"></i>
+                </a>
+                <ul id="orders-dropdown" class="collapse">
+                    <li>
+                        <a href="orders.php">View Orders</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
                 <a href="comments.php">
                     <i class="fa fa-fw fa-file"></i> Comments
                 </a>

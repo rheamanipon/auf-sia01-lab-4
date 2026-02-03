@@ -137,6 +137,33 @@ include "includes/navigation.php";
                             </a>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <?php
+                                        $query = "SELECT * FROM products";
+                                        $select_all_products = mysqli_query($connection, $query);
+                                        $products_count = mysqli_num_rows($select_all_products);
+                                        ?>
+                                        <div class='huge'><?php echo $products_count; ?></div>
+                                        <div>Products</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="products.php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

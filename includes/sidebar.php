@@ -16,23 +16,38 @@
         </form>
     </div>
 
-    <!-- Login Form -->
+    <!-- Login Form / Welcome & Logout -->
     <div class="well">
-        <h4>Login</h4>
-        <form action="includes/login.php" method="POST">
-            <div class="form-group">
-                <input type="text" name="username" class="form-control" placeholder="Enter Username">
-            </div>
-            <div class="form-group">
-                <input type="password" name="password" class="form-control" placeholder="Enter Password">
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit" name="login">
-                    Login
-                </button>
-
-            </div>
-        </form>
+        <?php
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (!empty($_SESSION['username'])) {
+            $display_name = htmlspecialchars($_SESSION['username']);
+            ?>
+            <h4>Welcome, <?php echo $display_name; ?></h4>
+            <p class="text-muted">You are logged in.</p>
+            <a href="includes/logout.php" class="btn btn-default btn-block">Logout</a>
+            <?php
+        } else {
+            ?>
+            <h4>Login</h4>
+            <form action="includes/login.php" method="POST">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" placeholder="Enter Username">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit" name="login">
+                        Login
+                    </button>
+                </div>
+            </form>
+            <?php
+        }
+        ?>
     </div>
 
     <!-- Blog Categories Well -->
